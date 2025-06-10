@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Products - FindIT</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <!-- 🔝 Navbar + Search Inline -->
+  <nav class="navbar">
+    <div class="navbar-left">
+      <div class="logo">FindIT 🛠️</div>
+      <ul class="nav-links">
+        <li><a href="#">Products</a></li>
+        <li><a href="login.html" onclick="logout()">Logout</a></li>
+      </ul>
+    </div>
+    <div class="navbar-right">
+      <input type="text" id="searchInput" placeholder="Search..." oninput="filterProducts()" />
+    </div>
+    <div class="cart-counter" id="cartCounter" onclick="goToCart()" style="cursor:pointer;">🛒 0</div>
+    <a href="cart.html">
+  <button style="margin: 20px;">Go to Cart Page 🛒</button>
+</a>
+
+  </nav>
+
+  <!-- 🧱 Product Grid -->
+  <div class="product-grid" id="productGrid">
+    <!-- Product cards will go here -->
+  </div>
+
+  <script src="products.js"></script>
+
+</body>
+</html>

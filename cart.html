@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cart - FindIT</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-left">
+    <div class="logo" onclick="goToProducts()" style="cursor:pointer;">FindIT 🛠️</div>
+    <ul class="nav-links">
+      <li><a href="products.html">Products</a></li>
+      <li><a href="login.html" onclick="logout()">Logout</a></li>
+    </ul>
+  </div>
+  <div class="navbar-right">
+    <div class="cart-counter" onclick="goToCart()" style="cursor:pointer;">🛒</div>
+    <a href="products.html">
+  <button style="margin: 20px;">Back to products page</button>
+</a>
+
+  </div>
+</nav>
+
+<div class="container">
+  <h2>Your Cart</h2>
+  <div id="cartItems"></div>
+  <h3 id="totalPrice"></h3>
+  <button id="checkoutBtn">
+    <a href="pay.html">Checkout </a></button>
+</div>
+
+<script src="cart.js"></script>
+</body>
+</html>
