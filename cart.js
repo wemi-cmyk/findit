@@ -77,7 +77,7 @@ checkoutBtn.addEventListener("click", () => {
   }
 
   // Redirect to payment page instead of showing thank you
-  window.location.href = "payment.html";
+  window.location.href = "pay.html";
 });
 
 
@@ -91,3 +91,4 @@ function updateCartCount() {
 
 displayCart();
 updateCartCount();
+

@@ -148,3 +148,4 @@ function addToCart(productId) {
 
   updateCartCount(); // <-- update count right after adding
 }
+

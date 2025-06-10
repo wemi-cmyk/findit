@@ -1,11 +1,13 @@
+<!-- pay.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Payment - FindIT</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="pay.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
+    <style>
     /* quick inline for demo */
     .payment-container {
       max-width: 400px; margin: 50px auto; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -17,89 +19,46 @@
     .error { color: red; margin-top: 20px; font-weight: bold; }
   </style>
 </head>
+
+<header>
+  <nav class="navbar">
+  <div class="navbar-left">
+    <div class="logo" onclick="goToProducts()" style="cursor:pointer;">FindIT 🛠️</div>
+    <ul class="nav-links">
+      <li><a href="products.html">Products</a></li>
+      <li><a href="login.html" onclick="logout()">Logout</a></li>
+    </ul>
+  </div>
+  <div class="navbar-right">
+    <div class="cart-counter" onclick="goToCart()" style="cursor:pointer;">🛒</div>
+    <a href="products.html">
+  <button style="margin: 20px;">Back to products page</button>
+</a>
+
+  </div>
+</nav>
+</header>
+
 <body>
   <div class="payment-container">
     <h2>Complete Payment</h2>
-    
+
     <label for="paymentMethod">Choose Payment Method:</label>
-    <select id="paymentMethod" onchange="updateForm()">
+    <select id="paymentMethod">
       <option value="">--Select--</option>
       <option value="airtel">Airtel Money</option>
       <option value="mtn">MTN MoMo</option>
       <option value="zamtel">ZamTel Money</option>
       <option value="atm">ATM Card</option>
     </select>
-    
+
     <div id="paymentForm"></div>
-    
-    <button onclick="processPayment()">Pay Now</button>
-    
+
+    <button id="payBtn">Pay Now</button>
+
     <div id="message"></div>
   </div>
-  
-  <script>
-    function updateForm() {
-      const method = document.getElementById('paymentMethod').value;
-      const formDiv = document.getElementById('paymentForm');
-      formDiv.innerHTML = ''; // clear old form
-      
-      if (method === 'atm') {
-        formDiv.innerHTML = `
-          <label for="cardNumber">Card Number:</label>
-          <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" />
-          <label for="expiry">Expiry Date:</label>
-          <input type="month" id="expiry" />
-          <label for="cvv">CVV:</label>
-          <input type="password" id="cvv" maxlength="3" />
-        `;
-      } else if (method) {
-        formDiv.innerHTML = `
-          <label for="phoneNumber">${method.charAt(0).toUpperCase() + method.slice(1)} Phone Number:</label>
-          <input type="tel" id="phoneNumber" placeholder="+260 97 123 4567" />
-        `;
-      }
-    }
-    
-    function processPayment() {
-      const method = document.getElementById('paymentMethod').value;
-      const messageDiv = document.getElementById('message');
-      messageDiv.innerHTML = '';
-      
-      if (!method) {
-        messageDiv.innerHTML = '<p class="error">Please select a payment method.</p>';
-        return;
-      }
-      
-      // Validate inputs based on method
-      if (method === 'atm') {
-        const cardNumber = document.getElementById('cardNumber').value.trim();
-        const expiry = document.getElementById('expiry').value;
-        const cvv = document.getElementById('cvv').value.trim();
-        if (!cardNumber || !expiry || !cvv) {
-          messageDiv.innerHTML = '<p class="error">Please fill all card details.</p>';
-          return;
-        }
-        // simple validation could be extended
-      } else {
-        const phone = document.getElementById('phoneNumber').value.trim();
-        if (!phone) {
-          messageDiv.innerHTML = '<p class="error">Please enter your phone number.</p>';
-          return;
-        }
-      }
-      
-      // Simulate API call delay
-      messageDiv.innerHTML = '<p>Processing payment...</p>';
-      setTimeout(() => {
-        // Randomly decide success or failure (70% success rate)
-        if (Math.random() < 0.7) {
-          messageDiv.innerHTML = `<p class="success">Payment successful via ${method === 'atm' ? 'ATM Card' : method.charAt(0).toUpperCase() + method.slice(1) }! Thank you.</p>`;
-          // Here you could redirect to success page or clear cart etc.
-        } else {
-          messageDiv.innerHTML = `<p class="error">Payment failed. Please try again.</p>`;
-        }
-      }, 2000);
-    }
-  </script>
+
+  <script src="pay.js"></script>
 </body>
 </html>
