@@ -1,0 +1,76 @@
+Absolutely, bestie! Here's your updated prompt with all the new backend files and progress we made together, fresh and organized like a clean git commit 💅🏾✨:
+
+markdown
+Copy code
+Hi ChatGPT! I’m working on a hardware e-commerce web platform called **FindIT**. I’ve already completed the frontend using **plain HTML, CSS, and JavaScript** (not React yet). It has working pages for:
+
+📄 Frontend Files:
+- `index.html` – Register page  
+- `login.html` – Login page  
+- `products.html` – Product listing with search + cart icon  
+- `cart.html` – Cart page with quantity updates and checkout  
+- `styles.css` – Shared styling for all pages  
+- `index.js`, `login.js`, `products.js`, `cart.js` – Frontend logic  
+
+---
+
+🧠 I’m now working on the **backend**, built using:
+
+- Node.js + Express  
+- MySQL (via Sequelize ORM)  
+- `.env` for environment variables  
+- Postman for testing API endpoints  
+
+---
+
+📁 Backend Folder Structure (updated):
+
+backend/
+├── server.js # Main Express server
+├── .env # DB credentials and config
+├── config/
+│ └── db.js # Sequelize DB connection setup
+│
+├── models/
+│ ├── User.js # User model (name, email, password)
+│ ├── Product.js # Product model (name, description, price, image)
+│ └── Cart.js # Cart model (userId, productId, quantity)
+│
+├── routes/
+│ ├── auth.js # /api/auth routes (register, login)
+│ ├── products.js # /api/products route for product listing
+│ ├── cart.js # /api/cart route (add, update, get cart)
+│ └── orders.js # /api/orders route (checkout)
+│
+├── controllers/
+│ ├── authController.js # register() and login() with bcrypt
+│ ├── productController.js # getAllProducts()
+│ ├── cartController.js # addToCart(), getCart(), updateCart()
+│ └── orderController.js # placeOrder() logic
+
+markdown
+Copy code
+
+✅ Working backend features:
+- `/api/auth/register` – Register user ✅  
+- `/api/auth/login` – Login with bcrypt password check ✅  
+- `/api/products` – Returns product list ✅  
+- `/api/cart` – Add to cart, get cart, update quantity ✅  
+- `/api/orders` – Checkout route for placing an order ✅  
+
+🧩 I'm responsible for the **customer-side logic** (CRM):
+- Auth (register/login)  
+- Browsing products  
+- Cart management  
+- Checkout process  
+
+My teammate is handling the **admin-side** (ERP) like adding new products and managing orders.
+
+🛠️ Next goals:
+- Integrate backend into the frontend
+- Improve UI for responsiveness
+- Possibly upgrade the project to use React later
+
+You can treat me as someone who understands code and concepts, but prefers clear, simple explanations and help staying organized.
+
+Let’s continue from here 💪🏾🛒✨

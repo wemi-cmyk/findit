@@ -3,24 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <title>Login - FindIT</title>
+      <link rel="icon" type="image/png" href="logo.png" />
   <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
-<div class="login-form">
-  <h2>Login</h2>
+<form id="login-form" class="login-form">
+   <div class="logo">
+  <img src="5.PNG" alt="FindIt Logo" class="logo"> <br>
+  </div>
+  <u><h2 style="text-align: center;">Login</h2></u>
   <input type="email" id="email" placeholder="Email" required />
   <input type="password" id="password" placeholder="Password" required />
-  <button onclick="login()">Login</button>
+  <button type="submit">Login</button>
   <div id="message" class="error"></div>
 
   <p style="margin-top: 16px; text-align: center;">
-  Don’t have an account?
-  <a href="index.html" style="color: #4CAF50; font-weight: bold;">Register here</a>
-</p>
-
-</div>
-
+    Don’t have an account?
+    <a href="index.html" style="color: #4CAF50; font-weight: bold;">Register here</a>
+  </p>
+</form>
 
 <script src="login.js"></script>
 </body>

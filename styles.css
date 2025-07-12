@@ -1,3 +1,17 @@
+.logo-img {
+  height: 60px; /* Adjust height to fit your navbar */
+  width: auto;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
 body {
   font-family: Arial;
   display: flex;
@@ -10,7 +24,7 @@ body {
 
 .register-form,
 .login-form,
-.container {
+.container{
   background-color: white;
   padding: 20px 30px;
   border-radius: 10px;

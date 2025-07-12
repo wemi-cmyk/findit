@@ -3,20 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <title>Register - FindIT</title>
+      <link rel="icon" type="image/png" href="logo.png" />
   <link rel="stylesheet" href="styles.css" />
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
 
-<div class="register-form">
-  <h2>Create Account</h2>
-  <input type="text" id="name" placeholder="Full Name" required />
+<form id="register-form" class="register-form">
+  <div class="logo">
+  <img src="5.PNG" alt="FindIt Logo" class="logo"> <br>
+  </div> <br>
+  <u><h2 style="text-align: center;">Create Account</h2></u>
+  <input type="text" id="name" placeholder="Username" required />
   <input type="email" id="email" placeholder="Email" required />
-  <input type="password" id="password" placeholder="Password" required />
-  <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
-  <button onclick="register()">Register</button>
+  <input type="password" id="password" placeholder="Password" minlength="8" required />
+  <input type="password" id="confirmPassword" placeholder="Confirm Password" minlength="8" required />
+  <button type="submit">Register</button>
   <div id="message" class="error"></div>
-</div>
+
+  <p style="margin-top: 16px; text-align: center;">
+    Already have an account?
+    <a href="login.html" style="color: #4CAF50; font-weight: bold;">Login here</a>
+  </p>
+</form>
 
 <script src="index.js"></script>
 </body>
